@@ -68,7 +68,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	app.ServeHTTP(w, r)
 }
 
-func loginHandler(username, password string, link string) (*colly.Collector, error) {
+func loginHandler(username, password string, link string, db string) (*colly.Collector, error) {
 	link = strings.TrimSuffix(link, "/")
 	var loginLink string = link + "/HomeAccess/Account/LogOn"
 
@@ -90,6 +90,7 @@ func loginHandler(username, password string, link string) (*colly.Collector, err
 
 	loginData["LogOnDetails.UserName"] = username
 	loginData["LogOnDetails.Password"] = password
+	loginData["Database"] = db
 
 	loginSuccessful := false
 	loginAttempted := false
