@@ -78,8 +78,8 @@ func loginHandler(username, password string, link string) (*colly.Collector, err
 	// Create a login data map to store login data
 	loginData := map[string]string{
 		"__RequestVerificationToken": "",
-		"SCKTY00328510CustomEnabled": "True",
-		"SCKTY00436568CustomEnabled": "True",
+		"SCKTY00328510CustomEnabled": "False",
+		"SCKTY00436568CustomEnabled": "False",
 		"Database":                   "270",
 		"VerificationOption":         "UsernamePassword",
 		"LogOnDetails.UserName":      "",
